@@ -89,23 +89,13 @@ function filterByDistance(points, minDist = 50) {
 }
 
 /**
- * Process a single video file
+ * Process a single video file and return the telemetry data
  * @param {string} videoPath - Path to the video file
- * @param {string} outputDir - Output directory for CSV files
- * @returns {Promise<boolean>} Success status
+ * @returns {Promise<Array>} Array of telemetry data points with video name
  */
-async function processVideo(videoPath, outputDir = "./output_csv") {
+async function processVideo(videoPath) {
   try {
     const videoName = path.basename(videoPath);
-    const baseName = path.parse(videoName).name;
-
-    // Ensure output directory exists
-    if (!fs.existsSync(outputDir)) {
-      fs.mkdirSync(outputDir, { recursive: true });
-    }
-    
-    const outputCsv = path.join(outputDir, `${baseName}_real_data.csv`);
-
     logger.info(`Processing ${videoName}...`);
     
     // Extract telemetry data directly with gpmf-extract
@@ -166,24 +156,25 @@ async function processVideo(videoPath, outputDir = "./output_csv") {
       const filteredData = filterByDistance(gpsData, 50);
       logger.info(`Filtered to ${filteredData.length} GPS points with 50m+ spacing`);
       
-      // Write to CSV
-      logger.info("Writing to CSV...");
-      await writeCSV(filteredData, outputCsv);
-      logger.info(`✅ Successfully wrote real GPS data to ${outputCsv}`);
+      // Add video name to each data point
+      const dataWithVideoName = filteredData.map(point => ({
+        ...point,
+        videoName: videoName
+      }));
       
-      return true;
+      return dataWithVideoName;
     } else {
       logger.warn(`⚠️ No telemetry data found in ${videoName}`);
-      return false;
+      return [];
     }
   } catch (err) {
     logger.error(`❌ Failed to process ${videoPath}: ${err.message}`);
-    return false;
+    return [];
   }
 }
 
 /**
- * Process all videos in the input directory
+ * Process all videos in the input directory and create a consolidated CSV
  * @param {string} inputDir - Input directory path
  * @param {string} outputDir - Output directory path
  */
@@ -206,19 +197,39 @@ async function processAllVideos(inputDir, outputDir = "./output_csv") {
 
   logger.info(`Found ${videoFiles.length} videos to process`);
   
+  // Ensure output directory exists
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+  
+  // Collect all data from all videos
+  const allData = [];
   let successCount = 0;
   
   // Process each video file
   for (const videoFile of videoFiles) {
     const videoPath = path.join(inputDir, videoFile);
     try {
-      const success = await processVideo(videoPath, outputDir);
-      if (success) {
+      const videoData = await processVideo(videoPath);
+      if (videoData.length > 0) {
+        allData.push(...videoData);
         successCount++;
       }
     } catch (err) {
       logger.error(`Failed to process ${videoFile}: ${err.message}`);
     }
+  }
+  
+  // Create consolidated CSV file
+  if (allData.length > 0) {
+    // Use the input directory name for the output file
+    const inputDirName = path.basename(inputDir);
+    const outputCsv = path.join(outputDir, `${inputDirName}_consolidated_data.csv`);
+    
+    logger.info("Writing consolidated CSV...");
+    const { writeConsolidatedCSV } = await import('./csvWriter.js');
+    await writeConsolidatedCSV(allData, outputCsv);
+    logger.info(`✅ Successfully wrote consolidated CSV with ${allData.length} records to ${outputCsv}`);
   }
   
   logger.info(`🏁 Processing complete! Successfully processed ${successCount} out of ${videoFiles.length} videos.`);

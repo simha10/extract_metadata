@@ -16,8 +16,7 @@ node_modules/
 !important
 !
 
-/logs/
-!important
-!
-logs/process.log
-logs/error.log
+# Logs directory
+logs/
+logs/*
+*.log
