@@ -1,2 +1,17 @@
 /input
 /output_csv
+
+node_modules/
+.DS_Store
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.example
+.env.template
+
+# Ignore all files in the root directory except for the ones listed above
+*
+!important
+!
