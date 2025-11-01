@@ -24,6 +24,7 @@ function haversine(lat1, lon1, lat2, lon2) {
 
 /**
  * Filters GPS points to include only those with sufficient distance between them
+ * Ensures at least start and end points are included
  * @param {Array} points - Array of GPS points
  * @param {number} minDist - Minimum distance in meters (default: 50)
  * @returns {Array} Filtered array of GPS points with distance tracking
@@ -34,7 +35,7 @@ function filterByDistance(points, minDist = 50) {
   const filtered = [];
   let lastPoint = points[0];
   
-  // Always include the first point
+  // Always include the first point (start point)
   filtered.push({
     ...lastPoint,
     lat: Number(lastPoint.lat.toFixed(8)),
@@ -43,8 +44,9 @@ function filterByDistance(points, minDist = 50) {
   });
 
   // Process remaining points
+  let lastAddedPoint = lastPoint;
   for (const p of points.slice(1)) {
-    const dist = haversine(lastPoint.lat, lastPoint.lon, p.lat, p.lon);
+    const dist = haversine(lastAddedPoint.lat, lastAddedPoint.lon, p.lat, p.lon);
     if (dist >= minDist) {
       filtered.push({
         ...p,
@@ -52,8 +54,29 @@ function filterByDistance(points, minDist = 50) {
         lon: Number(p.lon.toFixed(8)),
         distance_m: Number(dist.toFixed(2))
       });
-      lastPoint = p;
+      lastAddedPoint = p;
     }
+  }
+
+  // Ensure the last point (end point) is always included if not already added
+  const lastPointInData = points[points.length - 1];
+  if (filtered.length === 1 || 
+      (lastPointInData.lat !== lastAddedPoint.lat || 
+       lastPointInData.lon !== lastAddedPoint.lon)) {
+    // Calculate distance from last added point to last point
+    const distFromLast = haversine(
+      lastAddedPoint.lat, 
+      lastAddedPoint.lon, 
+      lastPointInData.lat, 
+      lastPointInData.lon
+    );
+    
+    filtered.push({
+      ...lastPointInData,
+      lat: Number(lastPointInData.lat.toFixed(8)),
+      lon: Number(lastPointInData.lon.toFixed(8)),
+      distance_m: Number(distFromLast.toFixed(2))
+    });
   }
 
   return filtered;

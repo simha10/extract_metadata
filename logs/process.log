@@ -156,3 +156,4 @@
 [2025-11-01T06:39:39.445Z] info: Successfully wrote CSV file: output_csv\NEW LINE MH 550 TO P.B SAIBASI _output_real_data.csv
 [2025-11-01T06:39:39.445Z] info: ✅ Successfully wrote real GPS data to output_csv\NEW LINE MH 550 TO P.B SAIBASI _output_real_data.csv
 [2025-11-01T06:39:39.445Z] info: 🏁 Processing complete! Successfully processed 4 out of 4 videos.
+[2025-11-01T06:59:13.294Z] info: No video files found in input directory
