@@ -14,7 +14,7 @@ export function getVideoFiles(inputDir) {
       return ext === ".mp4" || ext === ".mov" || ext === ".avi" || ext === ".mkv";
     }).map(file => path.join(inputDir, file));
   } catch (err) {
-    throw new Error(`Failed to read input directory: ${err.message}`);
+    throw new Error(`Failed to read input directory '${inputDir}': ${err.message}`);
   }
 }
 

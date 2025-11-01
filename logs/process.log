@@ -18,3 +18,141 @@
 [2025-11-01T06:10:12.386Z] info: Successfully wrote CSV file: output_csv\GH010260_output_real_data.csv
 [2025-11-01T06:10:13.609Z] info: Writing 33 records to output_csv\GH010261_output_real_data.csv
 [2025-11-01T06:10:13.610Z] info: Successfully wrote CSV file: output_csv\GH010261_output_real_data.csv
+[2025-11-01T06:22:05.216Z] info: Found 0 videos to process in test_videos
+[2025-11-01T06:22:05.217Z] info: No video files found in input directory
+[2025-11-01T06:23:38.881Z] info: Found 5 videos to process in ./input
+[2025-11-01T06:23:38.883Z] info: Processing GH010257_output.MP4...
+[2025-11-01T06:23:38.883Z] info: Extracting telemetry from input\GH010257_output.MP4
+[2025-11-01T06:23:39.265Z] info: Video streams: ["video \u000bGoPro AVC  ","audio \u000bGoPro AAC  ","data \u000bGoPro MET  ","data \u000bGoPro AVC  "]
+[2025-11-01T06:23:39.607Z] info: Extracted telemetry buffer of size: 2338548 bytes
+[2025-11-01T06:23:39.607Z] info: Parsing telemetry data
+[2025-11-01T06:25:51.058Z] info: Found 0 videos to process in test_videos
+[2025-11-01T06:25:51.059Z] info: No video files found in input directory
+[2025-11-01T06:25:56.521Z] info: Found 0 videos to process in test_videos
+[2025-11-01T06:25:56.522Z] info: No video files found in input directory
+[2025-11-01T06:25:59.763Z] info: Found 0 videos to process in test_videos
+[2025-11-01T06:25:59.765Z] info: No video files found in input directory
+[2025-11-01T06:27:17.552Z] info: Found 4 videos to process in E:\projects\testing\telemerty_processing_testing_Videos\Input
+[2025-11-01T06:27:17.554Z] info: Processing FPOI 1029 TO MH 6_output.MP4...
+[2025-11-01T06:27:17.554Z] info: Extracting telemetry from E:\projects\testing\telemerty_processing_testing_Videos\Input\FPOI 1029 TO MH 6_output.MP4
+[2025-11-01T06:27:17.637Z] info: Video streams: ["video \u000bGoPro AVC  ","audio \u000bGoPro AAC  ","data \u000bGoPro MET  ","data \u000bGoPro AVC  "]
+[2025-11-01T06:27:17.731Z] info: Extracted telemetry buffer of size: 310604 bytes
+[2025-11-01T06:27:17.731Z] info: Parsing telemetry data
+[2025-11-01T06:31:33.204Z] info: No video files found in input directory
+[2025-11-01T06:35:01.329Z] info: Found 4 videos to process
+[2025-11-01T06:35:01.332Z] info: Processing FPOI 1029 TO MH 6_output.MP4...
+[2025-11-01T06:35:01.332Z] info: Extracting GPMF data...
+[2025-11-01T06:35:01.928Z] info: Extracted raw data size: 310604 bytes
+[2025-11-01T06:35:01.928Z] info: Parsing telemetry data...
+[2025-11-01T06:35:01.965Z] info: Telemetry parsing completed
+[2025-11-01T06:35:01.966Z] info: Found 2 telemetry devices
+[2025-11-01T06:35:01.966Z] info: Processing 43 GPS samples from device 1
+[2025-11-01T06:35:01.966Z] info: Extracted 43 GPS data points
+[2025-11-01T06:35:01.966Z] info: Applying distance filtering...
+[2025-11-01T06:35:01.967Z] info: Filtered to 5 GPS points with 50m+ spacing
+[2025-11-01T06:35:01.967Z] info: Writing to CSV...
+[2025-11-01T06:35:01.967Z] info: Writing 5 records to output_csv\FPOI 1029 TO MH 6_output_real_data.csv
+[2025-11-01T06:35:01.969Z] info: Successfully wrote CSV file: output_csv\FPOI 1029 TO MH 6_output_real_data.csv
+[2025-11-01T06:35:01.969Z] info: ✅ Successfully wrote real GPS data to output_csv\FPOI 1029 TO MH 6_output_real_data.csv
+[2025-11-01T06:35:01.969Z] info: Processing FPOI 1039 TO MH 3_output.MP4...
+[2025-11-01T06:35:01.969Z] info: Extracting GPMF data...
+[2025-11-01T06:35:02.614Z] info: Extracted raw data size: 363608 bytes
+[2025-11-01T06:35:02.615Z] info: Parsing telemetry data...
+[2025-11-01T06:35:02.644Z] info: Telemetry parsing completed
+[2025-11-01T06:35:02.644Z] info: Found 2 telemetry devices
+[2025-11-01T06:35:02.644Z] info: Processing 50 GPS samples from device 1
+[2025-11-01T06:35:02.645Z] info: Extracted 50 GPS data points
+[2025-11-01T06:35:02.645Z] info: Applying distance filtering...
+[2025-11-01T06:35:02.645Z] info: Filtered to 7 GPS points with 50m+ spacing
+[2025-11-01T06:35:02.645Z] info: Writing to CSV...
+[2025-11-01T06:35:02.645Z] info: Writing 7 records to output_csv\FPOI 1039 TO MH 3_output_real_data.csv
+[2025-11-01T06:35:02.646Z] info: Successfully wrote CSV file: output_csv\FPOI 1039 TO MH 3_output_real_data.csv
+[2025-11-01T06:35:02.646Z] info: ✅ Successfully wrote real GPS data to output_csv\FPOI 1039 TO MH 3_output_real_data.csv
+[2025-11-01T06:35:02.646Z] info: Processing MH 9 TO MH 7 TO NAIBASTI BHITHAURA TO FPOI 1033_output.MP4...
+[2025-11-01T06:35:02.646Z] info: Extracting GPMF data...
+[2025-11-01T06:35:04.743Z] info: Extracted raw data size: 1391496 bytes
+[2025-11-01T06:35:04.743Z] info: Parsing telemetry data...
+[2025-11-01T06:35:04.846Z] info: Telemetry parsing completed
+[2025-11-01T06:35:04.846Z] info: Found 2 telemetry devices
+[2025-11-01T06:35:04.847Z] info: Processing 190 GPS samples from device 1
+[2025-11-01T06:35:04.847Z] info: Extracted 190 GPS data points
+[2025-11-01T06:35:04.847Z] info: Applying distance filtering...
+[2025-11-01T06:35:04.847Z] info: Filtered to 14 GPS points with 50m+ spacing
+[2025-11-01T06:35:04.847Z] info: Writing to CSV...
+[2025-11-01T06:35:04.847Z] info: Writing 14 records to output_csv\MH 9 TO MH 7 TO NAIBASTI BHITHAURA TO FPOI 1033_output_real_data.csv
+[2025-11-01T06:35:04.848Z] info: Successfully wrote CSV file: output_csv\MH 9 TO MH 7 TO NAIBASTI BHITHAURA TO FPOI 1033_output_real_data.csv
+[2025-11-01T06:35:04.848Z] info: ✅ Successfully wrote real GPS data to output_csv\MH 9 TO MH 7 TO NAIBASTI BHITHAURA TO FPOI 1033_output_real_data.csv
+[2025-11-01T06:35:04.848Z] info: Processing NEW LINE MH 550 TO P.B SAIBASI _output.MP4...
+[2025-11-01T06:35:04.849Z] info: Extracting GPMF data...
+[2025-11-01T06:35:06.962Z] info: Extracted raw data size: 1689904 bytes
+[2025-11-01T06:35:06.962Z] info: Parsing telemetry data...
+[2025-11-01T06:35:07.075Z] info: Telemetry parsing completed
+[2025-11-01T06:35:07.076Z] info: Found 2 telemetry devices
+[2025-11-01T06:35:07.076Z] info: Processing 231 GPS samples from device 1
+[2025-11-01T06:35:07.076Z] info: Extracted 231 GPS data points
+[2025-11-01T06:35:07.076Z] info: Applying distance filtering...
+[2025-11-01T06:35:07.076Z] info: Filtered to 21 GPS points with 50m+ spacing
+[2025-11-01T06:35:07.076Z] info: Writing to CSV...
+[2025-11-01T06:35:07.076Z] info: Writing 21 records to output_csv\NEW LINE MH 550 TO P.B SAIBASI _output_real_data.csv
+[2025-11-01T06:35:07.077Z] info: Successfully wrote CSV file: output_csv\NEW LINE MH 550 TO P.B SAIBASI _output_real_data.csv
+[2025-11-01T06:35:07.077Z] info: ✅ Successfully wrote real GPS data to output_csv\NEW LINE MH 550 TO P.B SAIBASI _output_real_data.csv
+[2025-11-01T06:35:07.077Z] info: 🏁 Processing complete! Successfully processed 4 out of 4 videos.
+[2025-11-01T06:39:12.482Z] info: No video files found in input directory
+[2025-11-01T06:39:37.124Z] info: Found 4 videos to process
+[2025-11-01T06:39:37.127Z] info: Processing FPOI 1029 TO MH 6_output.MP4...
+[2025-11-01T06:39:37.127Z] info: Extracting GPMF data...
+[2025-11-01T06:39:37.363Z] info: Extracted raw data size: 310604 bytes
+[2025-11-01T06:39:37.363Z] info: Parsing telemetry data...
+[2025-11-01T06:39:37.400Z] info: Telemetry parsing completed
+[2025-11-01T06:39:37.400Z] info: Found 2 telemetry devices
+[2025-11-01T06:39:37.400Z] info: Processing 43 GPS samples from device 1
+[2025-11-01T06:39:37.400Z] info: Extracted 43 GPS data points
+[2025-11-01T06:39:37.401Z] info: Applying distance filtering...
+[2025-11-01T06:39:37.401Z] info: Filtered to 5 GPS points with 50m+ spacing
+[2025-11-01T06:39:37.401Z] info: Writing to CSV...
+[2025-11-01T06:39:37.401Z] info: Writing 5 records to output_csv\FPOI 1029 TO MH 6_output_real_data.csv
+[2025-11-01T06:39:37.402Z] info: Successfully wrote CSV file: output_csv\FPOI 1029 TO MH 6_output_real_data.csv
+[2025-11-01T06:39:37.403Z] info: ✅ Successfully wrote real GPS data to output_csv\FPOI 1029 TO MH 6_output_real_data.csv
+[2025-11-01T06:39:37.403Z] info: Processing FPOI 1039 TO MH 3_output.MP4...
+[2025-11-01T06:39:37.403Z] info: Extracting GPMF data...
+[2025-11-01T06:39:37.646Z] info: Extracted raw data size: 363608 bytes
+[2025-11-01T06:39:37.646Z] info: Parsing telemetry data...
+[2025-11-01T06:39:37.678Z] info: Telemetry parsing completed
+[2025-11-01T06:39:37.678Z] info: Found 2 telemetry devices
+[2025-11-01T06:39:37.678Z] info: Processing 50 GPS samples from device 1
+[2025-11-01T06:39:37.678Z] info: Extracted 50 GPS data points
+[2025-11-01T06:39:37.678Z] info: Applying distance filtering...
+[2025-11-01T06:39:37.678Z] info: Filtered to 7 GPS points with 50m+ spacing
+[2025-11-01T06:39:37.678Z] info: Writing to CSV...
+[2025-11-01T06:39:37.679Z] info: Writing 7 records to output_csv\FPOI 1039 TO MH 3_output_real_data.csv
+[2025-11-01T06:39:37.679Z] info: Successfully wrote CSV file: output_csv\FPOI 1039 TO MH 3_output_real_data.csv
+[2025-11-01T06:39:37.679Z] info: ✅ Successfully wrote real GPS data to output_csv\FPOI 1039 TO MH 3_output_real_data.csv
+[2025-11-01T06:39:37.680Z] info: Processing MH 9 TO MH 7 TO NAIBASTI BHITHAURA TO FPOI 1033_output.MP4...
+[2025-11-01T06:39:37.680Z] info: Extracting GPMF data...
+[2025-11-01T06:39:38.428Z] info: Extracted raw data size: 1391496 bytes
+[2025-11-01T06:39:38.428Z] info: Parsing telemetry data...
+[2025-11-01T06:39:38.535Z] info: Telemetry parsing completed
+[2025-11-01T06:39:38.535Z] info: Found 2 telemetry devices
+[2025-11-01T06:39:38.535Z] info: Processing 190 GPS samples from device 1
+[2025-11-01T06:39:38.536Z] info: Extracted 190 GPS data points
+[2025-11-01T06:39:38.536Z] info: Applying distance filtering...
+[2025-11-01T06:39:38.536Z] info: Filtered to 14 GPS points with 50m+ spacing
+[2025-11-01T06:39:38.536Z] info: Writing to CSV...
+[2025-11-01T06:39:38.536Z] info: Writing 14 records to output_csv\MH 9 TO MH 7 TO NAIBASTI BHITHAURA TO FPOI 1033_output_real_data.csv
+[2025-11-01T06:39:38.537Z] info: Successfully wrote CSV file: output_csv\MH 9 TO MH 7 TO NAIBASTI BHITHAURA TO FPOI 1033_output_real_data.csv
+[2025-11-01T06:39:38.537Z] info: ✅ Successfully wrote real GPS data to output_csv\MH 9 TO MH 7 TO NAIBASTI BHITHAURA TO FPOI 1033_output_real_data.csv
+[2025-11-01T06:39:38.537Z] info: Processing NEW LINE MH 550 TO P.B SAIBASI _output.MP4...
+[2025-11-01T06:39:38.537Z] info: Extracting GPMF data...
+[2025-11-01T06:39:39.327Z] info: Extracted raw data size: 1689904 bytes
+[2025-11-01T06:39:39.327Z] info: Parsing telemetry data...
+[2025-11-01T06:39:39.443Z] info: Telemetry parsing completed
+[2025-11-01T06:39:39.443Z] info: Found 2 telemetry devices
+[2025-11-01T06:39:39.444Z] info: Processing 231 GPS samples from device 1
+[2025-11-01T06:39:39.444Z] info: Extracted 231 GPS data points
+[2025-11-01T06:39:39.444Z] info: Applying distance filtering...
+[2025-11-01T06:39:39.444Z] info: Filtered to 21 GPS points with 50m+ spacing
+[2025-11-01T06:39:39.444Z] info: Writing to CSV...
+[2025-11-01T06:39:39.445Z] info: Writing 21 records to output_csv\NEW LINE MH 550 TO P.B SAIBASI _output_real_data.csv
+[2025-11-01T06:39:39.445Z] info: Successfully wrote CSV file: output_csv\NEW LINE MH 550 TO P.B SAIBASI _output_real_data.csv
+[2025-11-01T06:39:39.445Z] info: ✅ Successfully wrote real GPS data to output_csv\NEW LINE MH 550 TO P.B SAIBASI _output_real_data.csv
+[2025-11-01T06:39:39.445Z] info: 🏁 Processing complete! Successfully processed 4 out of 4 videos.

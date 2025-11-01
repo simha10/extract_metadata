@@ -37,8 +37,8 @@ function filterByDistance(points, minDist = 50) {
   // Always include the first point
   filtered.push({
     ...lastPoint,
-    lat: Number(lastPoint.lat.toFixed(6)),
-    lon: Number(lastPoint.lon.toFixed(6)),
+    lat: Number(lastPoint.lat.toFixed(8)),
+    lon: Number(lastPoint.lon.toFixed(8)),
     distance_m: 0
   });
 
@@ -48,8 +48,8 @@ function filterByDistance(points, minDist = 50) {
     if (dist >= minDist) {
       filtered.push({
         ...p,
-        lat: Number(p.lat.toFixed(6)),
-        lon: Number(p.lon.toFixed(6)),
+        lat: Number(p.lat.toFixed(8)),
+        lon: Number(p.lon.toFixed(8)),
         distance_m: Number(dist.toFixed(2))
       });
       lastPoint = p;
