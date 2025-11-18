@@ -14,8 +14,10 @@ export async function writeCSV(data, outputPath) {
       path: outputPath,
       header: [
         { id: "videoName", title: "Video_Name" },
-        { id: "lat", title: "Latitude" },
-        { id: "lon", title: "Longitude" },
+        { id: "startLat", title: "start_Latitude" },
+        { id: "startLon", title: "start_Longitude" },
+        { id: "endLat", title: "end_Latitude" },
+        { id: "endLon", title: "end_Longitude" },
         { id: "alt", title: "Altitude (m)" },
         { id: "speed", title: "Speed (m/s)" },
         { id: "distance_m", title: "DistanceFromPrevious (m)" }
@@ -42,8 +44,10 @@ export async function writeConsolidatedCSV(allData, outputPath) {
       path: outputPath,
       header: [
         { id: "videoName", title: "Video_Name" },
-        { id: "lat", title: "Latitude" },
-        { id: "lon", title: "Longitude" },
+        { id: "startLat", title: "start_Latitude" },
+        { id: "startLon", title: "start_Longitude" },
+        { id: "endLat", title: "end_Latitude" },
+        { id: "endLon", title: "end_Longitude" },
         { id: "alt", title: "Altitude (m)" },
         { id: "speed", title: "Speed (m/s)" },
         { id: "distance_m", title: "DistanceFromPrevious (m)" }
