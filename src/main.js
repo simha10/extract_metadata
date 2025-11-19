@@ -211,6 +211,9 @@ async function processVideo(videoPath) {
  * @param {string} outputDir - Output directory path
  */
 async function processAllVideos(inputDir, outputDir = "./output_csv") {
+  // Display input folder path at the beginning
+  logger.info(`📁 Input folder: ${inputDir}`);
+  
   // Validate input directory
   if (!validateInputDirectory(inputDir)) {
     process.exit(1);
@@ -317,6 +320,9 @@ async function processAllVideos(inputDir, outputDir = "./output_csv") {
   
   const totalTimeMinutes = Math.round((Date.now() - startTime) / 60000);
   logger.info(`🏁 Processing complete! Successfully processed ${successCount} out of ${videoFiles.length} videos in ${totalTimeMinutes} minute${totalTimeMinutes !== 1 ? 's' : ''}.`);
+  
+  // Display input folder path at the end
+  logger.info(`📁 Input folder processed: ${inputDir}`);
 }
 
 /**
