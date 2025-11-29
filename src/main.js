@@ -257,6 +257,7 @@ async function processAllVideos(inputDir, outputDir = "./output_csv") {
   // Collect all segments from all videos
   const allSegments = [];
   let successCount = 0;
+  const failedVideos = []; // Track failed videos
   
   // Track processing time for ETA calculation
   const startTime = Date.now();
@@ -283,6 +284,10 @@ async function processAllVideos(inputDir, outputDir = "./output_csv") {
       if (videoSegments.length > 0) {
         allSegments.push(...videoSegments);
         successCount++;
+      } else {
+        // Video processing resulted in no data, consider it a failure
+        failedVideos.push(videoFile);
+        logger.error(`❌ No telemetry data found in ${videoFile}`);
       }
       
       // Memory management for large batches
@@ -297,6 +302,7 @@ async function processAllVideos(inputDir, outputDir = "./output_csv") {
       // Continue processing even if one video fails
     } catch (err) {
       logger.error(`Failed to process ${videoFile}: ${err.message}`);
+      failedVideos.push(videoFile); // Track failed video
       // Continue with next video instead of stopping
     }
   }
@@ -320,6 +326,16 @@ async function processAllVideos(inputDir, outputDir = "./output_csv") {
   
   const totalTimeMinutes = Math.round((Date.now() - startTime) / 60000);
   logger.info(`🏁 Processing complete! Successfully processed ${successCount} out of ${videoFiles.length} videos in ${totalTimeMinutes} minute${totalTimeMinutes !== 1 ? 's' : ''}.`);
+  
+  // Display failed videos if any
+  if (failedVideos.length > 0) {
+    logger.error(`❌ Failed videos (${failedVideos.length}):`);
+    failedVideos.forEach(video => {
+      logger.error(`   - ${video}`);
+    });
+  } else {
+    logger.info(`✅ All videos processed successfully!`);
+  }
   
   // Display input folder path at the end
   logger.info(`📁 Input folder processed: ${inputDir}`);
